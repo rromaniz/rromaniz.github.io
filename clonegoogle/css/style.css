@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:#FFFFFF;
+    font-family: Arial,sans-serif;
+    font-size: 14px;
+}
+li{
+    margin:0 23px 0 0;
+}
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+}
+.contenedor{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.navi{
+    padding: 21px;
+    font-size: 13px;
+}
+.perfil>img{
+    border-radius: 50%;
+    width: 37px;
+}
+.menu>img{
+    width: 20px;
+}
+.contenido{
+    margin-top: 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form{
+    width: 530px;
+    padding: 10px 15px;
+    height: 20px;
+    border-radius: 100px;
+    border:1px solid #E3E5E9;
+    display: flex;
+    align-items: center;
+}
+
+.form:hover{
+    box-shadow: 0 1px 5px #d5d7da;
+    border-color: #E3E5E9;
+}
+
+.form>span>img{
+    width: 15px;
+}
+
+.form>input{
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+}
+.botones{
+    margin: 30px;
+    display: grid;
+    grid-template:"boton1 boton2"
+                  "ofrecido ofrecido";
+    grid-gap: 15px;
+}
+
+.botones>button{
+    border:none;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    font-size: 13px;
+    cursor: pointer;
+    color:#5F6368;
+}
+.botones>button:hover{
+    box-shadow: 0px 0px 4px 0px #71777B;
+    color: #5f6368;
+}
+
+.botones>button:first-of-type{
+   grid-row: boton1;
+}
+
+.botones>button:nth-of-type(2){
+    grid-row: boton2;
+ }
+ .botones>p{
+     grid-area: ofrecido;
+     font-size: 13px;
+ }
+ .botones>p>a{
+    margin-right: 6px;
+    color: #1A0DAB;
+ }
+ .pie{
+    background-color: #F2F2F2;
+     display: grid;
+     grid-template-areas: "pais-origen"
+                          "menu-footer";
+   
+ }
+
+ .pie>*{
+     border-top: 1px solid #E4E4E4;
+     height: 40px;
+     padding: 0 30px;
+     border-bottom: 1px solid #E4E4E4;
+     color: #5f6368;
+ }
+
+ .pais{
+     grid-area: pais-origen;
+     display: flex;
+     align-items: center;
+ }
+
+ .links{
+     grid-area: menu-footer;
+     display: grid;
+     grid-template-columns: repeat(2,auto);
+ }
+.links-derecha{
+    justify-self: end;
+}
+ .links-izquerda{
+     justify-self: start;
+ }
+
+ .links>ul>li>a{
+     list-style: none;
+     color: #5F6365;
+     text-decoration: none;
+     font-size: 13px;
+ }
+
+.links>ul>li>a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 720px) {
+    
+    .links>ul>li>a{
+        font-size: 10px;
+    }
+    .pais{
+        align-content: center;
+    }
+    .links{
+        display: flex;
+        padding-bottom: 10px;
+        flex-direction: column;
+        align-content: center;
+        
+    }
+    .form{
+        width: 300px;
+    }
+    .contenido{
+        margin-top: 40%;
+    }
+
+    .links *{
+        padding: 3px;
+        justify-content: start;
+    }
+
+    .pie{
+        grid-template-areas:"pais-origen"
+                            "menu-footer";
+    }
+}
