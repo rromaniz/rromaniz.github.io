@@ -1,0 +1,351 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #121922;
+    font-weight: 600;
+}
+li{
+   list-style: none; 
+}
+.navbar {
+    font-size: 18px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 10px;
+  }
+  
+  .main-nav {
+    list-style-type: none;
+    display: none;
+  }
+  
+  .nav-links,.logo {
+    text-decoration: none;
+    color: #121922;
+  }
+  
+  .main-nav li {
+    text-align: center;
+    margin: 15px auto;
+  }
+  
+  .logo {
+    display: inline-block;
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  
+  .navbar-toggle {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    color: #121922;
+    font-size: 24px;
+  }
+  
+  .active {
+    display: block;
+  }
+/* menu responsivo */
+
+
+
+
+/*grid principal*/
+.content-principal{
+margin-top:1% ;
+display: grid;
+height: 100vh;
+grid-template-columns: repeat(6,1fr);
+grid-template-rows: 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+grid-auto-rows: 100px;
+grid-template-areas:
+". descripcion descripcion descripcion datos ."
+ ".work work work work."
+ ".cards cards cards cards."
+ ".footer footer footer footer.";
+gap: 0.5rem;
+
+}
+.datos{
+    grid-area: datos;
+    height: 400px;
+    color:#212121;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+}
+.datos>h2{
+    padding: 20px;
+}
+.datos>img{
+    border-radius: 14px;
+    width: 250px;
+    opacity: 0.9;
+}
+.descripcion{
+    padding: 30px;
+    grid-area: descripcion;
+}
+.descripcion>h2{
+    font-size: 3rem;
+    line-height: 20px;
+    margin-bottom: 2%;
+}
+.descripcion>p{
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-top: 3%;
+}
+.work{
+    margin-top: 3%;
+    grid-area:work;
+    display: flex;
+    justify-content: center;
+}
+.cards{
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+}
+.card{
+    width: 100%;
+    height: 250px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.overlay{
+ background: rgba(0,0,0,0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+.text-card{
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: ease-in-out, opacity 0.9s ease-in-out;
+    cursor: pointer;
+    color: #ffffff;
+    
+}
+.text-card>a>button{
+    margin-top: 5px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    padding: 8px 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+.work>h2{
+    font-size: 3rem;
+    line-height: 20px;
+    margin-bottom: 2%;
+}
+.footer{
+    margin-top: 3%;
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+}
+.footer>h2{
+    font-size: 3rem;
+    line-height: 20px;
+    margin-bottom: 2%;
+}
+.footer>h3{
+    font-size: 1.6rem;
+    line-height: 20px;
+    margin-bottom: 1%;
+}
+
+.footer>h4>a{
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 20px;
+    margin-bottom: 2%;
+text-decoration: underline;
+}
+.footer-text{
+    margin-top: 1%;
+}
+.social-links{
+    margin-top: 2%;
+    justify-content: right;
+    align-content: center;
+    grid-auto-flow: column;
+}
+.social-links>a{
+    font-size: 2rem;
+    margin:0 5px 0 5px;
+}
+.fa-github-square:hover{
+    transition: 0.5s;
+    color: #800080;
+}
+.fa-instagram:hover{
+    transition: 0.5s;
+    color:#DC2E46;
+}
+.fa-linkedin:hover{
+    transition: 0.5s;
+    color:#016FAB;
+}
+#card-1{
+    background-image: url('../img/met.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#card-2{
+    background-image: url('../img/goo.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#card-3{
+    background-image: url('../img/mascotas.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#card-4{
+    background-color: darkslateblue;
+}
+#card-5{
+    background-color: firebrick;
+}
+#card-6{
+    background-color:limegreen;
+}
+/*Media queries */
+
+@media only screen and (max-width:768px){
+    .content-principal{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+        grid-auto-rows: 100px;
+        grid-template-areas:
+        "datos"
+        "descripcion"
+         "work"
+         "cards"
+         "footer";
+    }
+    .descripcion>h2{
+        font-size: 1.7rem;
+        text-align: center;
+    }
+    .descripcion>p{
+        font-size: 0.9rem;
+        font-weight: 300;
+        margin-top: 3%;
+        text-align: justify;
+    }
+    .work>h2{
+        font-size: 1.7rem;
+        text-align: center;
+    }
+    .cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        width: 90%;
+        
+    }
+    .card:hover{
+        transition: 0.5s;
+        opacity: 0.8;  
+    }
+
+    .footer>h2{
+        font-size: 1.7rem;
+        text-align: center;
+    }
+    .footer>h3{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .navbar {
+      display: flex;
+      justify-content:space-around;
+      padding-bottom: 0;
+      height: 70px;
+      align-items: center;
+    }
+  
+    .main-nav {
+      display: flex;
+      margin-right: 20px;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  
+    .main-nav li {
+      margin: 0;
+    }
+    .main-nav>li>a:hover{
+        transition: 0.9s;
+        background-color: #121922;
+        color: #ffffff;
+    }
+    .nav-links {
+      margin-left: 46px;
+      padding: 6px;
+      border-radius: 3px;
+    }
+  
+    .logo {
+      margin-top: 0;
+    }
+  
+    .navbar-toggle {
+      display: none;
+    }
+  
+    .logo:hover,
+    .nav-links:hover {
+      color: #121922;
+    }
+  }
+  
+
