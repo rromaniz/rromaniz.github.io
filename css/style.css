@@ -246,13 +246,22 @@ text-decoration: underline;
     background-size: cover;
 }
 #card-4{
-    background-color: darkslateblue;
+    background-image: url('../img/webmovie.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #card-5{
-    background-color: firebrick;
+    background-image: url('../img/covi.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #card-6{
-    background-color:limegreen;
+    background-image: url('../img/google.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 /*Media queries */
 
