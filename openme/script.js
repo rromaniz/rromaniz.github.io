@@ -1,4 +1,4 @@
-var TxtType = function(el, toRotate, period) {
+var textType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
         this.loopNum = 0;
@@ -8,7 +8,7 @@ var TxtType = function(el, toRotate, period) {
         this.isDeleting = false;
     };
 
-    TxtType.prototype.tick = function() {
+    textType.prototype.tick = function() {
         var i = this.loopNum % this.toRotate.length;
         var fullTxt = this.toRotate[i];
 
@@ -39,35 +39,37 @@ var TxtType = function(el, toRotate, period) {
         }, delta);
     };
 
-    function getRandomEmoji() {
-        const emojis = ['❤️','🤎','💜','❤','💜'];
-        const randomIndex = Math.floor(Math.random() * emojis.length);
-        return emojis[randomIndex];
+    function getRandomImage() {
+        const images = [
+            'assets/hasbu.png',
+            'assets/cheems.png',
+        ];
+        const randomIndex = Math.floor(Math.random() * images.length);
+        return images[randomIndex];
     }
     
-    // Función para crear un nuevo emoji y animarlo
-    function createEmoji() {
-        const emoji = document.createElement('span');
-        emoji.innerHTML = getRandomEmoji();
-        emoji.style.position = 'absolute';
-        emoji.style.fontSize = Math.random() * 20 + 10 + 'px';
-        //emoji.style.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
-        emoji.style.opacity = 0.3;
-        emoji.style.transform = `translate(${Math.random() * window.innerWidth}px, -20px) rotate(${Math.random() * 360}deg)`;
-    
-        document.getElementById('rainContainer').appendChild(emoji);
-    
-        // Animación de la caída del emoji
+    function createImage() {
+        const image = document.createElement('img');
+        image.src = getRandomImage(); // Selecciona una imagen aleatoria
+        image.style.position = 'absolute';
+        image.style.width = Math.random() * 80 + 40 + 'px';
+        image.style.height = 'auto';
+        image.style.opacity = 0.5;
+        image.style.transform = `translate(${window.innerWidth / 2}px, -20px) rotate(${Math.random() * 360}deg)`; // Modificar la posición inicial para que sea el centro de la pantalla
+
+        document.getElementById('rainContainer').appendChild(image);
+
+        // Animación de la caída de la imagen
         anime({
-            targets: emoji,
+            targets: image,
             translateY: window.innerHeight + 20,
-            duration: Math.random() * 2000 + 1500,
+            duration: Math.random() * 3500 + 4000,
             easing: 'easeInOutSine',
-            translateX: 220,
+            translateX: window.innerWidth / 2, // Modificar la posición final para que sea el centro de la pantalla
             direction: 'alternate',
             complete: function() {
-                emoji.remove(); // Elimina el emoji después de la animación
-                createEmoji(); // Crea un nuevo emoji para reemplazarlo
+                image.remove(); // Elimina la imagen después de la animación
+                createImage(); // Crea una nueva imagen para reemplazarla
             }
         });
     }
@@ -81,16 +83,15 @@ var TxtType = function(el, toRotate, period) {
             var toRotate = elements[i].getAttribute('data-type');
             var period = elements[i].getAttribute('data-period');
             if (toRotate) {
-              new TxtType(elements[i], JSON.parse(toRotate), period);
+              new textType(elements[i], JSON.parse(toRotate), period);
             }
             
         } for (let i = 0; i < 30; i++) {
-            createEmoji();
+            createImage();
         }
 
         // INJECT CSS
         var css = document.createElement("style");
-        css.type = "text/css";
         css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
         document.body.appendChild(css);
     };
