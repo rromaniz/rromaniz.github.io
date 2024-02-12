@@ -43,6 +43,8 @@ var textType = function(el, toRotate, period) {
         const images = [
             'assets/hasbu.png',
             'assets/cheems.png',
+            'assets/cheems_dos.png',
+            'assets/hasbu_dos.png',
         ];
         const randomIndex = Math.floor(Math.random() * images.length);
         return images[randomIndex];
@@ -55,7 +57,7 @@ var textType = function(el, toRotate, period) {
         image.style.width = Math.random() * 80 + 40 + 'px';
         image.style.height = 'auto';
         image.style.opacity = 0.5;
-        image.style.transform = `translate(${window.innerWidth / 2}px, -20px) rotate(${Math.random() * 360}deg)`; // Modificar la posición inicial para que sea el centro de la pantalla
+        image.style.transform = `translate(${window.innerWidth / 2}px, -60px) rotate(${Math.random() * 350}deg)`; // Modificar la posición inicial para que sea el centro de la pantalla
 
         document.getElementById('rainContainer').appendChild(image);
 
