@@ -89,7 +89,7 @@ var textType = function(el, toRotate, period) {
             }
             
         } for (let i = 0; i < 30; i++) {
-            createImage();
+            //createImage();
         }
 
         // INJECT CSS
