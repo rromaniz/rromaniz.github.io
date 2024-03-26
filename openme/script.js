@@ -70,8 +70,8 @@ var textType = function(el, toRotate, period) {
             translateX: window.innerWidth / 2, // Modificar la posición final para que sea el centro de la pantalla
             direction: 'alternate',
             complete: function() {
-                image.remove(); // Elimina la imagen después de la animación
-                createImage(); // Crea una nueva imagen para reemplazarla
+                //image.remove(); // Elimina la imagen después de la animación
+                //createImage(); // Crea una nueva imagen para reemplazarla
             }
         });
     }
