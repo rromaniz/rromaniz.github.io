@@ -41,10 +41,10 @@ var textType = function(el, toRotate, period) {
 
     function getRandomImage() {
         const images = [
-            'assets/hasbu.png',
-            'assets/cheems.png',
-            'assets/cheems_dos.png',
-            'assets/hasbu_dos.png',
+            // 'assets/hasbu.png',
+            // 'assets/cheems.png',
+            // 'assets/cheems_dos.png',
+            // 'assets/hasbu_dos.png',
         ];
         const randomIndex = Math.floor(Math.random() * images.length);
         return images[randomIndex];
